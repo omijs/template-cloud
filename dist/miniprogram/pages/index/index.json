@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "todo-footer": "../../components/todo-footer/index"
+  },
+  "navigationBarBackgroundColor": "#24292e",
+  "navigationBarTextStyle": "white",
+  "navigationBarTitleText": " ",
+  "backgroundColor": "#eeeeee",
+  "backgroundTextStyle": "light"
+}

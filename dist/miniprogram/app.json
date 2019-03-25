@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/list/index",
+    "pages/detail/index",
+    "pages/import/index",
+    "pages/index/index",
+    "pages/about/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "Omi Cloud",
+    "navigationBarTextStyle": "black"
+  }
+}

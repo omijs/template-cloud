@@ -1,0 +1,19 @@
+<block>
+    <view class="container">
+        <view class="title">todos</view>
+        <image class="github" bindtap="gotoAbout" src="{{anonymousState__temp}}"></image>
+        <view class="form">
+            <input class="new-todo" bindinput="textInput" value="{{inputText}}" placeholder="What needs to be done?" autofocus="" />
+            <button class="add-btn" bindtap="newTodo">确定</button>
+        </view>
+        <view class="todo-list">
+            <block wx:if="{{type === 'all' || type === 'active' && !item.$original.done || type === 'done' && item.$original.done}}" wx:for="{{loopArray0}}" wx:for-item="item">
+                <view class="{{item.$loopState__temp3}}">
+                    <view class="toggle" data-id="{{item.$original._id}}" bindtap="toggle"></view><text>{{item.$original.text}}</text>
+                    <view class="delete" data-id="{{item.$original._id}}" bindtap="delete"></view>
+                </view>
+            </block>
+        </view>
+        <todo-footer bindfilter="filter" bindclear="clear" left="{{left}}" done="{{done}}" type="{{type}}" __fn_onFilter="{{true}}" __fn_onClear="{{true}}"></todo-footer>
+    </view>
+</block>

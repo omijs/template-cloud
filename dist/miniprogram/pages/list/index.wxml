@@ -1,0 +1,13 @@
+<block>
+    <view>
+        <view class="item" data-id="{{item._id}}" bindtap="gotoDetail" wx:for="{{list}}" wx:for-item="item"><text>{{item.title}}</text>
+            <image src="{{arrowPng}}"></image>
+        </view>
+        <view class="item" bindtap="gotoTodo"><text>Todo App【案例】 </text>
+            <image src="{{arrowPng}}"></image>
+        </view>
+        <view class="item" bindtap="gotoAbout"><text>Github & omijs.org</text>
+            <image src="{{arrowPng}}"></image>
+        </view>
+    </view>
+</block>
