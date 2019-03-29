@@ -7,10 +7,10 @@
             <button class="add-btn" bindtap="newTodo">确定</button>
         </view>
         <view class="todo-list">
-            <block wx:if="{{type === 'all' || type === 'active' && !item.$original.done || type === 'done' && item.$original.done}}" wx:for="{{loopArray0}}" wx:for-item="item">
-                <view class="{{item.$loopState__temp3}}">
-                    <view class="toggle" data-id="{{item.$original._id}}" bindtap="toggle"></view><text>{{item.$original.text}}</text>
-                    <view class="delete" data-id="{{item.$original._id}}" bindtap="delete"></view>
+            <block wx:if="{{type === 'all' || type === 'active' && !item.done || type === 'done' && item.done}}" wx:for="{{todo}}" wx:for-item="item">
+                <view class="{{'todo-item' + (item.done ? ' done' : '')}}">
+                    <view class="toggle" data-id="{{item._id}}" bindtap="toggle"></view><text>{{item.text}}</text>
+                    <view class="delete" data-id="{{item._id}}" bindtap="delete"></view>
                 </view>
             </block>
         </view>

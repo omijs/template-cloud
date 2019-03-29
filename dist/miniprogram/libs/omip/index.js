@@ -29,33 +29,39 @@ var Component = function () {
     value: function update(patch, callback) {
       var _this = this;
 
+      this.beforeUpdate && this.beforeUpdate();
+      this.beforeRender && this.beforeRender();
+
       try {
         this._createData();
       } catch (e) {
         console.log(e);
       }
 
-      this.beforeUpdate && this.beforeUpdate();
-      this.beforeRender && this.beforeRender();
+      for (var key in this.data) {
+        if (this.data[key] === undefined) {
+          delete this.data[key];
+        }
+      }
 
       if (arguments.length === 0) {
-        this._weappRef.setData(this.data);
+        this.$scope.setData(this.data);
       } else if (arguments.length === 1) {
         if (typeof patch === 'function') {
-          this._weappRef.setData(this.data, patch);
+          this.$scope.setData(this.data, patch);
         } else {
           this.data = this.data || {};
           Object.keys(patch).forEach(function (path) {
             (0, _updateData.updateData)(_this.data, path, patch[path]);
           });
-          this._weappRef.setData(this.data);
+          this.$scope.setData(this.data);
         }
       } else {
         this.data = this.data || {};
         Object.keys(patch).forEach(function (path) {
           (0, _updateData.updateData)(_this.data, path, patch[path]);
         });
-        this._weappRef.setData(this.data, callback);
+        this.$scope.setData(this.data, callback);
       }
       this.updated && this.updated();
     }
@@ -71,7 +77,7 @@ var Component = function () {
   }, {
     key: "fire",
     value: function fire(type, data) {
-      this._weappRef.triggerEvent(type, data);
+      this.$scope.triggerEvent(type, data);
     }
   }]);
 
@@ -153,7 +159,7 @@ root.create = {
     config.onLoad = function (options) {
       var _this2 = this;
 
-      ins._weappRef = this;
+      ins.$scope = this;
       config.$$refs.forEach(function (ref) {
         if (ref.type === 'component') {
           if (ref.fn) {
@@ -164,7 +170,7 @@ root.create = {
         }
       });
       ins.install(options);
-      ins.beforeRender && ins.beforeRender();
+      ins.update();
     };
 
     config.onReady = function () {
@@ -206,8 +212,6 @@ root.create = {
     if (ins.onTabItemTap) {
       config.onTabItemTap = ins.onTabItemTap.bind(ins);
     }
-
-    ins._createData();
 
     Page(config);
   })

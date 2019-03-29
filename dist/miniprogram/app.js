@@ -31,7 +31,7 @@ global.Omi.defineApp('my-app', function (_WeElement) {
     }
 
     return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = _TaroComponentClass.__proto__ || Object.getPrototypeOf(_TaroComponentClass)).call.apply(_ref, [this].concat(args))), _this), _this.config = {
-      pages: ['pages/list/index', 'pages/detail/index', 'pages/import/index', 'pages/index/index', 'pages/about/index'],
+      pages: ['pages/list/index', 'pages/detail/index', 'pages/import/index', 'pages/index/index', 'pages/about/index', 'pages/code/index'],
       window: {
         backgroundTextStyle: 'light',
         navigationBarBackgroundColor: '#fff',

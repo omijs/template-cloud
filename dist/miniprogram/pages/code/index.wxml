@@ -1,0 +1,17 @@
+<block>
+    <view class="pre language-jsx">
+        <view class="code">
+            <block wx:for="{{tks}}" wx:for-item="tk">
+                <block wx:if="{{tk.type === 'tag'}}"><text class="{{'token ' + tk.type}}"><block wx:for="{{tk.content}}" wx:for-item="stk"><block wx:if="{{stk.deep}}"><text class="{{'token ' + sstk.type}}" wx:for="{{stk.content}}" wx:for-item="sstk">{{sstk.content || sstk}}</text>
+                </block>
+                <block wx:else><text class="{{'token ' + stk.type}}">{{stk.content || stk}}</text>
+                </block>
+            </block>
+            </text>
+</block>
+<block wx:else><text class="{{'token ' + tk.type}}">{{tk.content || tk}}</text>
+</block>
+</block>
+</view>
+</view>
+</block>

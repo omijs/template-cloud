@@ -1,0 +1,6 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = { md: "### \u9879\u76EE\u6A21\u677F\n\n| **Template Type**|  **Command**|  **Describe**|\n| ------------ |  -----------|  ----------------- |\n|\u57FA\u7840\u6A21\u677F(v3.3.0+)|`omi init my-app`| \u57FA\u7840\u6A21\u677F\uFF0C\u652F\u6301 omi \u548C omio(IE8+)|\n|\u5C0F\u7A0B\u5E8F\u6A21\u677F(v3.3.5+)|`omi init-p my-app`| Omi \u5F00\u53D1\u5C0F\u7A0B\u5E8F |\n|\u57FA\u7840\u6A21\u677F(v3.3.9+)|`omi init-o my-app`| \u652F\u6301 IE8 \u7684\u57FA\u7840\u6A21\u677F\uFF0C\u53EA\u662F build \u7684\u65F6\u5019\u652F\u6301 IE8\uFF0C\u5F00\u53D1\u8C03\u8BD5\u8BF7\u7528 IE9|\n|\u652F\u6301\u9884\u6E32\u67D3\u5FEB\u7167\u9AA8\u67B6\u7684\u6A21\u677F|`omi init-snap my-app`| \u57FA\u7840\u6A21\u677F\uFF0C\u652F\u6301 omi \u548C omio(IE8+)\uFF0C\u5185\u7F6E\u9884\u6E32\u67D3|\n|TypeScript Template(omi-cli v3.3.0+)|`omi init-ts my-app`|\u4F7F\u7528 TypeScript \u7684\u6A21\u677F|\n|Mobile Template|`omi init-weui my-app`| \u4F7F\u7528\u4E86 weui \u548C omi-router \u7684\u79FB\u52A8 web app \u6A21\u677F|\n|omi-mp Template(omi-cli v3.0.13+)|`omi init-mp my-app`  |\u5C0F\u7A0B\u5E8F\u5F00\u53D1 Web \u7684\u6A21\u677F|\n|MVVM Template(omi-cli v3.0.22+)|`omi init-mvvm my-app`  |MVVM \u6A21\u677F|" };

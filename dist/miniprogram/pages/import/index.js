@@ -16,9 +16,9 @@ var _wxParse = require("../../components/wxParse/wxParse.js");
 
 var _wxParse2 = _interopRequireDefault(_wxParse);
 
-var _introductionMd = require("./introduction.md.js");
+var _test = require("./test.js");
 
-var _introductionMd2 = _interopRequireDefault(_introductionMd);
+var _test2 = _interopRequireDefault(_test);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -65,9 +65,9 @@ global.Omi.definePage('page-about', (_temp2 = _class = function (_WeElement) {
       var Remarkable = require("../../npm/remarkable/index.js");
       var md = new Remarkable();
 
-      var article = md.render(_introductionMd2.default.md);
+      var article = md.render(_test2.default.md);
       console.log(article);
-      _wxParse2.default.wxParse('article', 'html', article, this._weappRef, 5);
+      _wxParse2.default.wxParse('article', 'html', article, this.$scope, 5);
 
       // 调用云函数
       wx.cloud.callFunction({
@@ -80,8 +80,8 @@ global.Omi.definePage('page-about', (_temp2 = _class = function (_WeElement) {
             // data 字段表示需新增的 JSON 数据
             data: {
               // _id: 'todo-identifiant-aleatoire', // 可选自定义 _id，在此处场景下用数据库自动分配的就可以了
-              md: _introductionMd2.default.md,
-              title: _introductionMd2.default.title,
+              md: _test2.default.md,
+              title: 'test',
               createTime: app.globalData.db.serverDate()
             },
             success: function success(res) {

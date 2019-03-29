@@ -21,7 +21,7 @@ function define(name, ctor) {
   config.created = function () {
     var _this = this;
 
-    ins._weappRef = this;
+    ins.$scope = this;
     config.$$refs.forEach(function (ref) {
       if (ref.type === 'component') {
         if (ref.fn) {
@@ -39,19 +39,14 @@ function define(name, ctor) {
   Object.keys(ctor.properties).forEach(function (key) {
     ctor.properties[key].observer = function (newVal, oldVal, changedPath) {
       ins.props[key] = newVal;
-      ins.beforeRender && ins.beforeRender.call(ins);
-      ins._createData();
-      //自定过滤 undefined
-      this.setData(JSON.parse(JSON.stringify(ins.data)));
+      ins.update();
     };
   });
 
   config.attached = function () {
     ins.props = this.properties;
     ins.install.call(ins);
-    ins.beforeRender && ins.beforeRender.call(ins);
-    ins._createData();
-    this.setData(ins.data);
+    ins.update();
   };
 
   config.moved = function () {};
@@ -63,8 +58,6 @@ function define(name, ctor) {
   config.detached = function () {
     ins.uninstall();
   };
-
-  config.data = ins._createData();
 
   Component(config);
 }

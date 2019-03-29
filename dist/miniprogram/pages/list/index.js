@@ -58,7 +58,7 @@ global.Omi.definePage('page-about', (_temp2 = _class = function (_WeElement) {
       });
     }, _this.gotoDetail = function (evt) {
       wx.navigateTo({
-        url: '../detail/index?id=' + evt.target.dataset.id
+        url: '../detail/index?id=' + evt.currentTarget.dataset.id
       });
     }, _this.$$refs = [], _temp), _possibleConstructorReturn(_this, _ret);
   }

@@ -37,7 +37,7 @@ global.Omi.definePage('page-index', (_temp2 = _class = function (_WeElement) {
       args[_key] = arguments[_key];
     }
 
-    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = _TaroComponentClass.__proto__ || Object.getPrototypeOf(_TaroComponentClass)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "loopArray0", "inputText", "type", "todo", "left", "done"], _this.config = {
+    return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_ref = _TaroComponentClass.__proto__ || Object.getPrototypeOf(_TaroComponentClass)).call.apply(_ref, [this].concat(args))), _this), _this.$usedState = ["anonymousState__temp", "inputText", "type", "todo", "left", "done"], _this.config = {
       navigationBarBackgroundColor: '#24292e',
       navigationBarTextStyle: 'white',
       navigationBarTitleText: ' ',
@@ -237,19 +237,8 @@ global.Omi.definePage('page-index', (_temp2 = _class = function (_WeElement) {
           done = _state.done;
 
       var anonymousState__temp = "/pages/index/github-logo.png";
-      var loopArray0 = todo.map(function (item) {
-        item = {
-          $original: (0, _index.internal_get_original)(item)
-        };
-        var $loopState__temp3 = type === 'all' || type === 'active' && !item.$original.done || type === 'done' && item.$original.done ? "todo-item" + (item.$original.done ? ' done' : '') : null;
-        return {
-          $loopState__temp3: $loopState__temp3,
-          $original: item.$original
-        };
-      });
       Object.assign(this.__state, {
-        anonymousState__temp: anonymousState__temp,
-        loopArray0: loopArray0
+        anonymousState__temp: anonymousState__temp
       });
       return this.__state;
     }
