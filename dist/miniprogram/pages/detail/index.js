@@ -69,8 +69,6 @@ global.Omi.definePage('page-about', (_temp2 = _class = function (_WeElement) {
         var article = md.render(res.data.md);
         _wxParse2.default.wxParse('article', 'html', article, _this2.$scope, 5);
         wx.hideLoading();
-      }).catch(function (err) {
-        console.error(err);
       });
     }
   }, {
